@@ -1,6 +1,5 @@
 import React from "react";
-import { Link } from "react-router-dom";
-
+import { Link, NavLink } from "react-router-dom";
 const NavigationBar = () => {
   return (
     <div className="navbar bg-slate-100 text-black border rounded-full mt-3 w-11/12 mx-auto">
@@ -27,19 +26,29 @@ const NavigationBar = () => {
             className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52"
           >
            <li>
-            <Link to='/' className="text-green-400">Home</Link>
+            <NavLink to='/'  className={({ isActive, isPending }) =>
+                  isPending ? "pending" : isActive ? "active" : ""
+                }>Home</NavLink>
           </li>
           <li>
-            <Link to='/about'>About</Link>
+            <NavLink to='/about' className={({ isActive, isPending }) =>
+                  isPending ? "pending" : isActive ? "active" : ""
+                }>About</NavLink>
           </li>
           <li>
-            <Link to='blog'>Blog</Link>
+            <NavLink to='blog' className={({ isActive, isPending }) =>
+                  isPending ? "pending" : isActive ? "active" : ""
+                }>Blog</NavLink>
           </li>
           <li>
-            <Link to='register'>Register</Link>
+            <NavLink to='register' className={({ isActive, isPending }) =>
+                  isPending ? "pending" : isActive ? "active" : ""
+                }>Register</NavLink>
           </li>
           <li>
-            <Link to='login'>Login</Link>
+            <NavLink to='login' className={({ isActive, isPending }) =>
+                  isPending ? "pending" : isActive ? "active" : ""
+                }>Login</NavLink>
           </li>
           </ul>
         </div>
@@ -49,19 +58,29 @@ const NavigationBar = () => {
       <div className="navbar-center hidden lg:flex">
         <ul className="menu menu-horizontal px-1">
           <li>
-            <Link to='/' className="text-green-400">Home</Link>
+            <NavLink to='/' className={({ isActive, isPending }) =>
+                  isPending ? "pending" : isActive ? "active" : ""
+                }>Home</NavLink>
           </li>
           <li>
-            <Link to='/about'>About</Link>
+            <NavLink to='/about' className={({ isActive, isPending }) =>
+                  isPending ? "pending" : isActive ? "active" : ""
+                }>About</NavLink>
           </li>
           <li>
-            <Link to='blog'>Blog</Link>
+            <NavLink to='blog' className={({ isActive, isPending }) =>
+                  isPending ? "pending" : isActive ? "active" : ""
+                }>Blog</NavLink>
           </li>
           <li>
-            <Link to='register'>Register</Link>
+            <NavLink to='register' className={({ isActive, isPending }) =>
+                  isPending ? "pending" : isActive ? "active" : ""
+                }>Register</NavLink>
           </li>
           <li>
-            <Link to='login'>Login</Link>
+            <NavLink to='login' className={({ isActive, isPending }) =>
+                  isPending ? "pending" : isActive ? "active" : ""
+                }>Login</NavLink>
           </li>
         </ul>
       </div>

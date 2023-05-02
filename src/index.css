@@ -12,3 +12,6 @@
   padding-left: 5%;
   padding-right: 5%;
  }
+ .active{
+  background: linear-gradient(90deg, #1c1d22 0%, #8dea3b 100%);
+}

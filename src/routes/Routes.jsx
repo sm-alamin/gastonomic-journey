@@ -5,6 +5,8 @@ import ViewDetails from "../pages/RecipeDetails/ViewDetails";
 import Login from "../pages/Login/Login";
 import Register from "../pages/Register/Register";
 import ErrorPage from "../pages/Error/ErrorPage";
+import About from "../pages/About/About";
+import Blog from "../pages/Blogs/Blog";
 
 const router = createBrowserRouter([
   {
@@ -15,6 +17,14 @@ const router = createBrowserRouter([
       {
         path: "/",
         element: <Home />,
+      },
+      {
+        path: "about",
+        element: <About />,
+      },
+      {
+        path: "blog",
+        element: <Blog />,
       },
       {
         path: "view-details/:id",
