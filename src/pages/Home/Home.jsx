@@ -6,7 +6,7 @@ import Chefs from "./Chefs";
 const Home = () => {
   return (
     <div>
-      <div className="flex gap-5 justify-center items-center w-11/12 mx-auto pt-5">
+      <div className="flex flex-col lg:flex-row gap-5 justify-center items-center w-11/12 mx-auto pt-5">
       <BannerLeft />
       <BannerRight />
     </div>

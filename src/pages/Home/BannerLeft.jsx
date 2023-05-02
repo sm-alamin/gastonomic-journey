@@ -2,7 +2,7 @@ import React from "react";
 
 const BannerLeft = () => {
   return (
-    <div className="w-full">
+    <div className="pt-10 lg:pt-0 w-full ">
       <h2 className="text-2xl text-indigo-800">Welcome to Gastonomic Journey</h2>
       <p className="text-3xl text-purple-600">Find Your Best Healthy && Tasty Food</p>
       <p className="text-2xl text-purple-400">
