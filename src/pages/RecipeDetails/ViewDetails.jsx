@@ -1,5 +1,5 @@
 import React from 'react';
-// import ChefBanner from './ChefBanner';
+import ChefBanner from './ChefBanner';
 import RecipeDetails from './RecipeDetails';
 import { useLoaderData } from 'react-router-dom';
 
@@ -8,7 +8,9 @@ const ViewDetails = () => {
     console.log(recipes);
     return (
         <div className='w-11/12 mx-auto'>
-            {/* <ChefBanner /> */}
+            <ChefBanner />
+
+            <h3 className='text-2xl text-purple-400 font-bold text-center'>My Latest Recipes- <span className='text-purple-800'>You can try</span></h3>
             <div className='grid grid-cols-2 gap-5'>
             {
                 recipes.map(recipe => <RecipeDetails 

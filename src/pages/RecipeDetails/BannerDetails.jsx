@@ -1,8 +1,8 @@
 import React from "react";
 import { FaFacebookF, FaInstagram, FaLinkedinIn, FaTwitter } from "react-icons/fa";
 
-const BannerDetails = ({info}) => {
-  const {id,
+const BannerDetails = ({info,id}) => {
+  const {
     picture_url,
     name,
     years_of_experience,
@@ -10,31 +10,36 @@ const BannerDetails = ({info}) => {
     likes,
     bio,
   } = info;
+  if (id && id !== info.id) {
+    return null;
+  }
+
   return (
-    <div className="">
-      <h2>
+    <div className="grid grid-cols-2 py-10 justify-center items-center">
+      <div>
+      <h2 className="text-2xl text-center text-orange-400 font-bold">
         Hello, I’m <br />
-        {name}
+        <span className="text-purple-900 text-3xl font-bold">{name}</span>
       </h2>
 
-      <h2>About Me:</h2>
+      <h2 className="text-2xl text-purple-800 font-bold">About Me:</h2>
       <p>
         {bio}
       </p>
 
       <div className="flex gap-5">
         <div>
-          <p>Department: Senior Chef.</p>
-          <p>Experience: {years_of_experience} Years.</p>
-          <p>Likes: {likes}</p>
+          <p><span className="text-purple-500 font-bold">Department:</span> Senior Chef.</p>
+          <p><span className="text-purple-500 font-bold">Experience:</span>{years_of_experience} Years.</p>
+          
         </div>
         <div>
-          <p>Recipe: {number_of_recipes}</p>
-          <p>Likes: {likes}</p>
+          <p><span className="text-purple-500 font-bold">Recipes:</span> {number_of_recipes}</p>
+          <p><span className="text-purple-500 font-bold">Likes:</span>{likes}</p>
         </div>
       </div>
       <div>
-        <h2>Follow Me:</h2>
+        <h2 className="text-purple-500 font-bold">Follow Me:</h2>
         <div className="flex gap-3 mt-3 mx-auto">
           <a
             className="border rounded-full p-2 hover:border-indigo-500"
@@ -62,8 +67,9 @@ const BannerDetails = ({info}) => {
           </a>
         </div>
       </div>
+      </div>
       <div>
-        <img src={picture_url} alt="" />
+        <img src={picture_url} alt="" className="rounded-xl shadow-lg"/>
       </div>
     </div>
   );
