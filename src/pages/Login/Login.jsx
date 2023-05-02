@@ -1,14 +1,58 @@
-import React from "react";
+import React, { useContext, useState } from "react";
 import { FaGithub, FaGoogle } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import './Login.css'
+import { AuthContext } from "../../providers/AuthProvider";
+import { GoogleAuthProvider, getAuth, signInWithPopup } from "firebase/auth";
+import app from "../../firebase/firebase.config";
 
 const Login = () => {
+  const [user, setUser] = useState(null);
+  const auth = getAuth(app);
+  const googleProvider = new GoogleAuthProvider();
+  const { signIn } = useContext(AuthContext);
+  const [error, setError] = useState("");
+
+  // Custom Login
+  const handleLogin = event => {
+    event.preventDefault();
+
+    const form = event.target;
+    const email = form.email.value;
+    const password = form.password.value;
+    console.log(email, password);
+
+    signIn(email, password)
+        .then(result => {
+            const loggedUser = result.user;
+            console.log(loggedUser)
+            form.reset();
+        })
+        .catch(error => {
+          setError(error.message);
+        })
+    
+}
+
+//Google Login
+const handleGoogleSignIn = () => {
+
+  signInWithPopup(auth, googleProvider)
+      .then(result => {
+          const loggedInUser = result.user;
+          console.log(loggedInUser);
+          setUser(loggedInUser);
+      })
+      .catch(error => {
+          console.log(error);
+      })
+}
   return (
     <div className="bg-food flex flex-col items-center justify-center min-h-screen pb-10">
       <div className="bg-white p-10 rounded-lg shadow-md">
         <h2 className="text-2xl font-bold mb-5 text-center">Login</h2>
-        <form>
+        <form onSubmit={handleLogin}>
+        <p className="text-error">{error}</p>
           <div className="mb-4">
             <label className="block text-gray-700 font-bold mb-2" for="email">
               Email
@@ -53,7 +97,7 @@ const Login = () => {
         <div className="grid grid-cols-2 gap-4">
           <button className="bg-purple-400 hover:bg-purple-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">
             <FaGoogle />
-            <span className="ml-2">Login with Google</span>
+            <span className="ml-2" onClick={handleGoogleSignIn}>Login with Google</span>
           </button>
           <button className="bg-gray-800 hover:bg-gray-900 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">
             <FaGithub/>

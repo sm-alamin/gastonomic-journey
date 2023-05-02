@@ -23,9 +23,6 @@ const AuthProvider = ({ children }) => {
     return signInWithEmailAndPassword(auth, email, password);
   };
 
-  const logOut = ()=>{
-    signOut(auth)
-  }
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, (loggedUser) => {
         console.log('loggedin user:', loggedUser)
@@ -40,7 +37,6 @@ const AuthProvider = ({ children }) => {
     user,
     createUser,
     signIn,
-    logOut
   };
 
   
