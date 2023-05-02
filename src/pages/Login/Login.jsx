@@ -5,7 +5,7 @@ import './Login.css'
 
 const Login = () => {
   return (
-    <div className="bg-food flex flex-col items-center justify-center min-h-screen">
+    <div className="bg-food flex flex-col items-center justify-center min-h-screen pb-10">
       <div className="bg-white p-10 rounded-lg shadow-md">
         <h2 className="text-2xl font-bold mb-5 text-center">Login</h2>
         <form>

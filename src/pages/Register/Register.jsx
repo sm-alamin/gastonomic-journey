@@ -1,7 +1,38 @@
-import React from "react";
+import React, { useContext, useState } from "react";
 import { Link } from "react-router-dom";
+import { AuthContext } from "../../providers/AuthProvider";
 
 const Register = () => {
+  const { createUser } = useContext(AuthContext);
+  const [error, setError] = useState("");
+  const handleRegister = (event) => {
+    event.preventDefault();
+    const form = event.target;
+
+    const name = form.name.value;
+    const email = form.email.value;
+    const photo = form.photo.value;
+    const password = form.password.value;
+    const confirm_password = form.confirm_password.value;
+    console.log(name, email, password, photo);
+
+    if (password !== confirm_password) {
+      setError("Your password did not match");
+      return;
+    } else if (password.length < 6) {
+      setError("password must be 6 characters or longer");
+      return;
+    }
+    createUser(email, password)
+      .then((result) => {
+        const loggedUser = result.user;
+        console.log(loggedUser);
+      })
+      .catch((error) => {
+        console.log(error);
+        setError(error.message);
+      });
+  };
   return (
     <div className=" bg-food min-h-screen flex flex-col justify-center py-12 sm:px-6 lg:px-8">
       <div className="sm:mx-auto sm:w-full sm:max-w-md">
@@ -11,7 +42,31 @@ const Register = () => {
       </div>
       <div className="mt-8 sm:mx-auto sm:w-full sm:max-w-md">
         <div className="bg-white py-8 px-4 shadow sm:rounded-lg sm:px-10">
-          <form className="space-y-6" action="#" method="POST">
+          <form
+            onSubmit={handleRegister}
+            className="space-y-6"
+            action="#"
+            method=""
+          >
+            <p className="text-error">{error}</p>
+            <div>
+              <label
+                htmlFor="email"
+                className="block text-sm font-medium text-gray-700"
+              >
+                Name
+              </label>
+              <div className="mt-1">
+                <input
+                  id="name"
+                  name="name"
+                  type="text"
+                  autoComplete="name"
+                  required
+                  className="appearance-none block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
+                />
+              </div>
+            </div>
             <div>
               <label
                 htmlFor="email"
@@ -50,6 +105,24 @@ const Register = () => {
             </div>
             <div>
               <label
+                htmlFor="password"
+                className="block text-sm font-medium text-gray-700"
+              >
+                Confirm Password
+              </label>
+              <div className="mt-1">
+                <input
+                  id="confirm_password"
+                  name="confirm_password"
+                  type="password"
+                  autoComplete="confirm-password"
+                  required
+                  className="appearance-none block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
+                />
+              </div>
+            </div>
+            <div>
+              <label
                 htmlFor="photo"
                 className="block text-sm font-medium text-gray-700"
               >
@@ -76,7 +149,10 @@ const Register = () => {
           </form>
           <p className="mt-8 text-center">
             Already have an account?{" "}
-            <Link className="font-bold text-blue-500 hover:text-blue-800" to='/login'>
+            <Link
+              className="font-bold text-blue-500 hover:text-blue-800"
+              to="/login"
+            >
               Login Here.
             </Link>
           </p>
