@@ -3,13 +3,14 @@ import { FaGithub, FaGoogle } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import './Login.css'
 import { AuthContext } from "../../providers/AuthProvider";
-import { GoogleAuthProvider, getAuth, signInWithPopup } from "firebase/auth";
+import { GithubAuthProvider, GoogleAuthProvider, getAuth, signInWithPopup } from "firebase/auth";
 import app from "../../firebase/firebase.config";
 
 const Login = () => {
   const [user, setUser] = useState(null);
   const auth = getAuth(app);
   const googleProvider = new GoogleAuthProvider();
+  const githubProvider = new GithubAuthProvider();
   const { signIn } = useContext(AuthContext);
   const [error, setError] = useState("");
 
@@ -46,6 +47,18 @@ const handleGoogleSignIn = () => {
       .catch(error => {
           console.log(error);
       })
+}
+//Github login
+const handleGithubSignIn = () => {
+  signInWithPopup(auth, githubProvider)
+  .then( result => {
+      const loggedUser = result.user;
+      console.log(loggedUser);
+      setUser(loggedUser);
+  })
+  .catch(error => {
+      console.log(error)
+  })
 }
   return (
     <div className="bg-food flex flex-col items-center justify-center min-h-screen pb-10">
@@ -101,7 +114,7 @@ const handleGoogleSignIn = () => {
           </button>
           <button className="bg-gray-800 hover:bg-gray-900 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">
             <FaGithub/>
-            <span className="ml-2">Login with Github</span>
+            <span className="ml-2" onClick={handleGithubSignIn}>Login with Github</span>
           </button>
         </div>
         <p className="mt-8 text-center">
