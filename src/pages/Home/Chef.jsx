@@ -5,6 +5,7 @@ import {
   FaPlusCircle,
   FaTwitter,
 } from "react-icons/fa";
+import { Link } from "react-router-dom";
 const Chef = ({ chef }) => {
   const {
     id,
@@ -73,9 +74,9 @@ const Chef = ({ chef }) => {
             xmlns="http://www.w3.org/2000/svg"
           >
             <path
-              fill-rule="evenodd"
+              fillRule="evenodd"
               d="M10 2a8 8 0 100 16 8 8 0 000-16zm0 14a6 6 0 100-12 6 6 0 000 12z"
-              clip-rule="evenodd"
+              clipRule="evenodd"
             />
           </svg>
         </span>
@@ -92,9 +93,9 @@ const Chef = ({ chef }) => {
             xmlns="http://www.w3.org/2000/svg"
           >
             <path
-              fill-rule="evenodd"
+              fillRule="evenodd"
               d="M10 2a8 8 0 100 16 8 8 0 000-16zm0 14a6 6 0 100-12 6 6 0 000 12z"
-              clip-rule="evenodd"
+              clipRule="evenodd"
             />
           </svg>
         </span>
@@ -109,21 +110,21 @@ const Chef = ({ chef }) => {
             xmlns="http://www.w3.org/2000/svg"
           >
             <path
-              fill-rule="evenodd"
+              fillRule="evenodd"
               d="M10 2a8 8 0 100 16 8 8 0 000-16zm0 14a6 6 0 100-12 6 6 0 000 12z"
-              clip-rule="evenodd"
+              clipRule="evenodd"
             />
           </svg>
         </span>
         <span className="ml-1">{likes} likes</span>
       </div>
       <div className="mt-3 flex justify-end">
-        <a
-          href="#"
+        <Link
+          to={`/view-details/${id}`}
           className="text-sm font-medium text-indigo-600 hover:text-indigo-500"
         >
           View Recipes
-        </a>
+        </Link>
       </div>
     </div>
   </div>

@@ -1,11 +1,14 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { FaSkyatlas, FaStaylinked } from "react-icons/fa";
-import { useLoaderData } from "react-router-dom";
 import Chef from "./chef";
 
 const Chefs = () => {
-  const chefInfo = useLoaderData();
-  console.log(chefInfo);
+    const [chefs, setChefs] = useState([]);
+    useEffect(() => {
+        fetch('http://localhost:5000/chef-info')
+          .then(response => response.json())
+          .then(data => setChefs(data));
+      }, []);
   return (
     <>
       <div className="bg-gray-100 py-8">
@@ -30,7 +33,7 @@ const Chefs = () => {
               <div>-------------------------</div>
             </div>
             <div className="mt-10 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3">
-              {chefInfo?.map((chef) => (
+              {chefs?.map((chef) => (
                 <Chef key={chef.id} chef={chef} />
               ))}
             </div>
