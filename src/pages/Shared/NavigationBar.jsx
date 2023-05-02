@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const NavigationBar = () => {
   return (
@@ -25,49 +26,42 @@ const NavigationBar = () => {
             tabIndex={0}
             className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52"
           >
-            <li>
-            <a>Home</a>
+           <li>
+            <Link to='/' className="text-green-400">Home</Link>
           </li>
           <li>
-            <a>About</a>
+            <Link to='/about'>About</Link>
           </li>
           <li>
-            <a>Menu</a>
+            <Link to='blog'>Blog</Link>
           </li>
           <li>
-            <a>Blog</a>
-          </li>
-          
-          <li>
-            <a>Register</a>
+            <Link to='register'>Register</Link>
           </li>
           <li>
-            <a>Login</a>
+            <Link to='login'>Login</Link>
           </li>
           </ul>
         </div>
-        <a className="btn btn-ghost normal-case text-xl">Gasto<span className="text-purple-400 mr-2">nomic </span>Jour
-            <span className="text-purple-400">ney</span></a>
+        <Link className="btn btn-ghost normal-case text-xl">Gasto<span className="text-purple-400 mr-2">nomic </span>Jour
+            <span className="text-purple-400">ney</span></Link>
       </div>
       <div className="navbar-center hidden lg:flex">
         <ul className="menu menu-horizontal px-1">
           <li>
-            <a className="text-green-400">Home</a>
+            <Link to='/' className="text-green-400">Home</Link>
           </li>
           <li>
-            <a>About</a>
+            <Link to='/about'>About</Link>
           </li>
           <li>
-            <a>Menu</a>
+            <Link to='blog'>Blog</Link>
           </li>
           <li>
-            <a>Blog</a>
+            <Link to='register'>Register</Link>
           </li>
           <li>
-            <a>Register</a>
-          </li>
-          <li>
-            <a>Login</a>
+            <Link to='login'>Login</Link>
           </li>
         </ul>
       </div>
