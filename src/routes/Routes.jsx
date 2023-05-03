@@ -7,6 +7,7 @@ import Register from "../pages/Register/Register";
 import ErrorPage from "../pages/Error/ErrorPage";
 import About from "../pages/About/About";
 import Blog from "../pages/Blogs/Blog";
+import PrivateRoute from "./PrivateRoute";
 
 const router = createBrowserRouter([
   {
@@ -28,9 +29,9 @@ const router = createBrowserRouter([
       },
       {
         path: "view-details/:id",
-        element: <ViewDetails />,
+        element: <PrivateRoute><ViewDetails /></PrivateRoute>,
         loader: ({ params }) =>
-          fetch(`http://localhost:5000/recipe-info/${params.id}`),
+          fetch(`https://chef-recipe-hunter-server-blush.vercel.app/recipe-info/${params.id}`),
       },
       {
         path: "login",

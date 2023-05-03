@@ -7,7 +7,7 @@ const Chefs = () => {
     const [chefs, setChefs] = useState([]);
     const [loading, setLoading] = useState(true);
     useEffect(() => {
-        fetch('http://localhost:5000/chef-info')
+        fetch('https://chef-recipe-hunter-server-blush.vercel.app/chef-info')
           .then(response => response.json())
           .then(data => setChefs(data));
           setLoading(false);

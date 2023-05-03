@@ -10,7 +10,7 @@ const ChefBanner = () => {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    fetch(`http://localhost:5000/chef-info/${id}`)
+    fetch(`https://chef-recipe-hunter-server-blush.vercel.app/chef-info/${id}`)
       .then((response) => response.json())
       .then((data) => {
         if (Array.isArray(data)) {

@@ -3,8 +3,15 @@ import { Link, NavLink } from "react-router-dom";
 import { AuthContext } from "../../providers/AuthProvider";
 import { Tooltip } from "react-tooltip";
 const NavigationBar = () => {
-  const { user } = useContext(AuthContext);
-  console.log("user is", user);
+  const { user, logOut } = useContext(AuthContext);
+
+  const handleLogOut = () => {
+    logOut()
+      .then()
+      .catch((error) => {
+        console.log(error);
+      });
+  };
   return (
     <div className="navbar bg-slate-100 text-black border rounded-full mt-3 w-11/12 mx-auto">
       <div className="navbar-start">
@@ -123,25 +130,41 @@ const NavigationBar = () => {
       <div className="navbar-end pr-5">
         <div className="dropdown dropdown-end">
           {user ? (
-            <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
-              <div className="w-10 rounded-full">
-                {user.photoURL ? (
-                  <img src={user.photoURL} alt="User avatar" data-tooltip-id="my-tooltip" data-tooltip-content={user.displayName}/>
-                ) : (
-                  <img
-                    src="https://img.freepik.com/free-photo/young-bearded-man-with-striped-shirt_273609-5677.jpg?w=740&t=st=1683087712~exp=1683088312~hmac=346cad2ba1b8d1055c6226246fdeb7b63b1c427c912cbf91e1bb8dab5089db6e"
-                    alt=""
-                  />
-                )}
-                {user.displayName ? (
-                  <div className="tooltip" data-tip="hello">
-                    <button className="btn">Hover me</button>
-                  </div>
-                ) : (
-                  " "
-                )}
-              </div>
-            </label>
+            <div className="dropdown dropdown-end">
+              <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
+                <div className="w-10 rounded-full">
+                  {user.photoURL ? (
+                    <img
+                      src={user.photoURL}
+                      alt="User avatar"
+                      data-tooltip-id="my-tooltip"
+                      data-tooltip-content={user.displayName}
+                    />
+                  ) : (
+                    <img
+                      src="https://img.freepik.com/free-photo/young-bearded-man-with-striped-shirt_273609-5677.jpg?w=740&t=st=1683087712~exp=1683088312~hmac=346cad2ba1b8d1055c6226246fdeb7b63b1c427c912cbf91e1bb8dab5089db6e"
+                      alt=""
+                    />
+                  )}
+                </div>
+              </label>
+              <ul
+                tabIndex={0}
+                className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52"
+              >
+                <li>
+                  <a className="justify-between">
+                    Profile
+                  </a>
+                </li>
+                <li>
+                  <a>Settings</a>
+                </li>
+                <li>
+                  <a onClick={handleLogOut}>Logout</a>
+                </li>
+              </ul>
+            </div>
           ) : (
             <Link
               to="login"
@@ -151,7 +174,10 @@ const NavigationBar = () => {
             </Link>
           )}
         </div>
-        <Tooltip style={{color: 'white', background: 'purple'}} id="my-tooltip" />
+        <Tooltip
+          style={{ color: "white", background: "purple" }}
+          id="my-tooltip"
+        />
       </div>
     </div>
   );

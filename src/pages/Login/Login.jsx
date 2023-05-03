@@ -1,6 +1,6 @@
 import React, { useContext, useState } from "react";
 import { FaGithub, FaGoogle } from "react-icons/fa";
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import './Login.css'
 import { AuthContext } from "../../providers/AuthProvider";
 import { GithubAuthProvider, GoogleAuthProvider, getAuth, signInWithPopup } from "firebase/auth";
@@ -13,6 +13,9 @@ const Login = () => {
   const githubProvider = new GithubAuthProvider();
   const { signIn } = useContext(AuthContext);
   const [error, setError] = useState("");
+  const location = useLocation();
+  const from = location.state?.from?.pathname || '/'
+  const navigate = useNavigate();
 
   // Custom Login
   const handleLogin = event => {
@@ -27,7 +30,7 @@ const Login = () => {
         .then(result => {
             const loggedUser = result.user;
             console.log(loggedUser)
-            form.reset();
+            navigate(from, {replace:true})
         })
         .catch(error => {
           setError(error.message);
@@ -43,6 +46,7 @@ const handleGoogleSignIn = () => {
           const loggedInUser = result.user;
           console.log(loggedInUser);
           setUser(loggedInUser);
+          navigate(from, {replace:true})
       })
       .catch(error => {
           console.log(error);
@@ -55,6 +59,7 @@ const handleGithubSignIn = () => {
       const loggedUser = result.user;
       console.log(loggedUser);
       setUser(loggedUser);
+      navigate(from, {replace:true})
   })
   .catch(error => {
       console.log(error)
@@ -67,7 +72,7 @@ const handleGithubSignIn = () => {
         <form onSubmit={handleLogin}>
         <p className="text-error">{error}</p>
           <div className="mb-4">
-            <label className="block text-gray-700 font-bold mb-2" for="email">
+            <label className="block text-gray-700 font-bold mb-2" htmlFor="email">
               Email
             </label>
             <input
@@ -80,7 +85,7 @@ const handleGithubSignIn = () => {
           <div className="mb-6">
             <label
               className="block text-gray-700 font-bold mb-2"
-              for="password"
+              htmlFor="password"
             >
               Password
             </label>
@@ -94,7 +99,7 @@ const handleGithubSignIn = () => {
           <div className="flex items-center justify-between">
             <button
               className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
-              type="button"
+              type="submit"
             >
               Login
             </button>

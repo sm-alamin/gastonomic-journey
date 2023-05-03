@@ -1,20 +1,21 @@
 import React, { useContext, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../providers/AuthProvider";
 
 const Register = () => {
   const { createUser } = useContext(AuthContext);
   const [error, setError] = useState("");
+  const navigate = useNavigate();
   const handleRegister = (event) => {
     event.preventDefault();
-    const form = event.target;
 
+    const form = event.target;
     const displayName = form.name.value;
     const email = form.email.value;
     const photoURL = form.photo.value;
     const password = form.password.value;
     const confirm_password = form.confirm_password.value;
-    console.log(name, email, password, photoURL);
+    console.log(displayName, email, password, photoURL);
 
     if (password !== confirm_password) {
       setError("Your password did not match");
@@ -28,6 +29,7 @@ const Register = () => {
         const loggedUser = result.user;
         console.log(loggedUser);
         form.reset();
+        navigate('/login');
       })
       .catch((error) => {
         console.log(error);
@@ -140,7 +142,7 @@ const Register = () => {
               </div>
             </div>
             <div>
-              <button
+              <button 
                 type="submit"
                 className="w-full flex justify-center py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500"
               >
