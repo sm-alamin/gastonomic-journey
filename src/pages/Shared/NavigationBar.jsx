@@ -1,6 +1,10 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Link, NavLink } from "react-router-dom";
+import { AuthContext } from "../../providers/AuthProvider";
+import { Tooltip } from "react-tooltip";
 const NavigationBar = () => {
+  const { user } = useContext(AuthContext);
+  console.log("user is", user);
   return (
     <div className="navbar bg-slate-100 text-black border rounded-full mt-3 w-11/12 mx-auto">
       <div className="navbar-start">
@@ -25,73 +29,129 @@ const NavigationBar = () => {
             tabIndex={0}
             className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52"
           >
-           <li>
-            <NavLink to='/'  className={({ isActive, isPending }) =>
+            <li>
+              <NavLink
+                to="/"
+                className={({ isActive, isPending }) =>
                   isPending ? "pending" : isActive ? "active" : ""
-                }>Home</NavLink>
-          </li>
-          <li>
-            <NavLink to='/about' className={({ isActive, isPending }) =>
+                }
+              >
+                Home
+              </NavLink>
+            </li>
+            <li>
+              <NavLink
+                to="/about"
+                className={({ isActive, isPending }) =>
                   isPending ? "pending" : isActive ? "active" : ""
-                }>About</NavLink>
-          </li>
-          <li>
-            <NavLink to='blog' className={({ isActive, isPending }) =>
+                }
+              >
+                About
+              </NavLink>
+            </li>
+            <li>
+              <NavLink
+                to="blog"
+                className={({ isActive, isPending }) =>
                   isPending ? "pending" : isActive ? "active" : ""
-                }>Blog</NavLink>
-          </li>
-          <li>
-            <NavLink to='register' className={({ isActive, isPending }) =>
+                }
+              >
+                Blog
+              </NavLink>
+            </li>
+            <li>
+              <NavLink
+                to="register"
+                className={({ isActive, isPending }) =>
                   isPending ? "pending" : isActive ? "active" : ""
-                }>Register</NavLink>
-          </li>
-          <li>
-            <NavLink to='login' className={({ isActive, isPending }) =>
-                  isPending ? "pending" : isActive ? "active" : ""
-                }>Login</NavLink>
-          </li>
+                }
+              >
+                Register
+              </NavLink>
+            </li>
           </ul>
         </div>
-        <Link className="btn btn-ghost normal-case text-xl">Gasto<span className="text-purple-400 mr-2">nomic </span>Jour
-            <span className="text-purple-400">ney</span></Link>
+        <Link className="btn btn-ghost normal-case text-xl">
+          Gasto<span className="text-purple-400 mr-2">nomic </span>Jour
+          <span className="text-purple-400">ney</span>
+        </Link>
       </div>
       <div className="navbar-center hidden lg:flex">
         <ul className="menu menu-horizontal px-1">
           <li>
-            <NavLink to='/' className={({ isActive, isPending }) =>
-                  isPending ? "pending" : isActive ? "active" : ""
-                }>Home</NavLink>
+            <NavLink
+              to="/"
+              className={({ isActive, isPending }) =>
+                isPending ? "pending" : isActive ? "active" : ""
+              }
+            >
+              Home
+            </NavLink>
           </li>
           <li>
-            <NavLink to='/about' className={({ isActive, isPending }) =>
-                  isPending ? "pending" : isActive ? "active" : ""
-                }>About</NavLink>
+            <NavLink
+              to="/about"
+              className={({ isActive, isPending }) =>
+                isPending ? "pending" : isActive ? "active" : ""
+              }
+            >
+              About
+            </NavLink>
           </li>
           <li>
-            <NavLink to='blog' className={({ isActive, isPending }) =>
-                  isPending ? "pending" : isActive ? "active" : ""
-                }>Blog</NavLink>
+            <NavLink
+              to="blog"
+              className={({ isActive, isPending }) =>
+                isPending ? "pending" : isActive ? "active" : ""
+              }
+            >
+              Blog
+            </NavLink>
           </li>
           <li>
-            <NavLink to='register' className={({ isActive, isPending }) =>
-                  isPending ? "pending" : isActive ? "active" : ""
-                }>Register</NavLink>
-          </li>
-          <li>
-            <NavLink to='login' className={({ isActive, isPending }) =>
-                  isPending ? "pending" : isActive ? "active" : ""
-                }>Login</NavLink>
+            <NavLink
+              to="register"
+              className={({ isActive, isPending }) =>
+                isPending ? "pending" : isActive ? "active" : ""
+              }
+            >
+              Register
+            </NavLink>
           </li>
         </ul>
       </div>
-      <div className="navbar-end">
-      <div className="dropdown dropdown-end">
-      <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
-        <div className="w-10 rounded-full">
-          <img src="https://picsum.photos/200/300" />
+      <div className="navbar-end pr-5">
+        <div className="dropdown dropdown-end">
+          {user ? (
+            <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
+              <div className="w-10 rounded-full">
+                {user.photoURL ? (
+                  <img src={user.photoURL} alt="User avatar" data-tooltip-id="my-tooltip" data-tooltip-content={user.displayName}/>
+                ) : (
+                  <img
+                    src="https://img.freepik.com/free-photo/young-bearded-man-with-striped-shirt_273609-5677.jpg?w=740&t=st=1683087712~exp=1683088312~hmac=346cad2ba1b8d1055c6226246fdeb7b63b1c427c912cbf91e1bb8dab5089db6e"
+                    alt=""
+                  />
+                )}
+                {user.displayName ? (
+                  <div className="tooltip" data-tip="hello">
+                    <button className="btn">Hover me</button>
+                  </div>
+                ) : (
+                  " "
+                )}
+              </div>
+            </label>
+          ) : (
+            <Link
+              to="login"
+              className="btn btn-ghost nav-link active text-white"
+            >
+              Login
+            </Link>
+          )}
         </div>
-      </label>
-    </div>
+        <Tooltip style={{color: 'white', background: 'purple'}} id="my-tooltip" />
       </div>
     </div>
   );

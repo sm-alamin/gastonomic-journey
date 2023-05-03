@@ -14,6 +14,7 @@ const Chef = ({ chef }) => {
     years_of_experience,
     number_of_recipes,
     likes,
+    department
   } = chef;
   const [isHovering, setIsHovering] = useState(false);
   return (
@@ -23,7 +24,7 @@ const Chef = ({ chef }) => {
   >
     <div className="aspect-w-3 aspect-h-2 relative">
       <img
-        className="object-cover relative"
+        className="object-cover h-80 w-full relative hover:scale-105"
         src={picture_url}
         alt="Chef 2"
       />
@@ -63,7 +64,7 @@ const Chef = ({ chef }) => {
     <div className="p-4">
       <div className="relative bg-white w-72 text-center mx-auto py-2 border shadow -top-12 rounded-md">
         <h3 className="font-medium text-gray-900">{name}</h3>
-        <p>Senior Chef</p>
+        <p>{department}</p>
       </div>
       <div className=" flex items-center text-sm text-gray-500">
         <span className="flex-shrink-0">
@@ -121,7 +122,7 @@ const Chef = ({ chef }) => {
       <div className="mt-3 flex justify-end">
         <Link
           to={`/view-details/${id}`}
-          className="text-sm font-medium text-indigo-600 hover:text-indigo-500"
+          className="text-sm font-medium btn btn-ghost outline-dotted text-slate-600 hover:text-indigo-500 hover:bg-base-200"
         >
           View Recipes
         </Link>

@@ -17,7 +17,7 @@ const Header = () => {
         </div>
         <div className="flex">
           <FaMapMarkerAlt className="mt-1 mr-2 text-green-400"/>
-          <p className="text-white">Balurmath, Chasara, Narayanganj</p>
+          <p className="text-white">Park Street, Kolkata, India</p>
         </div>
       </div>
     </header>

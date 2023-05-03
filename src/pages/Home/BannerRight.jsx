@@ -26,8 +26,10 @@ const BannerRight = () => {
         modules={[Autoplay, Pagination, Navigation]}
         className="mySwiper w-full"
       >
-        <SwiperSlide><img src="https://img.freepik.com/free-photo/family-having-indian-food_53876-20449.jpg?w=740&t=st=1682966767~exp=1682967367~hmac=39badf1bba82b7e811b8ed3fcd8f72fc7b6646200cb5639824128fc526ad0c48" className="w-full" alt="" /></SwiperSlide>
-        <SwiperSlide><img src="https://img.freepik.com/free-photo/pretty-confectioner_1098-16815.jpg?w=740&t=st=1682967168~exp=1682967768~hmac=769566aff63596de251505b180284277b7f567bd79543db94b35cc9f1f4dc910" className="w-full" alt="" /></SwiperSlide>
+        <SwiperSlide><img src="https://img.freepik.com/free-photo/top-view-fast-food-plate-bowls-black-pepper-sauces-french-fries-plate-chicken-legs-cream-notebook_140725-117508.jpg?w=740&t=st=1683084490~exp=1683085090~hmac=ab6cc9f0421f0dfc83177c093d703df3cb1cec15c5b812e2b4e019e3e3bf0a83" className="w-full rounded-2xl" alt="" /></SwiperSlide>
+        <SwiperSlide><img src="https://img.freepik.com/free-photo/grilled-beef-steak-dark-wooden-surface_1150-44344.jpg?w=740&t=st=1683084340~exp=1683084940~hmac=b1002832e61aafdcfc5e8c577cbaba2f6149185d54b1e8fcee54a2d7b79764e8" className="w-full rounded-2xl" alt="" /></SwiperSlide>
+        <SwiperSlide><img src="https://img.freepik.com/free-photo/chicken-wings-barbecue-sweetly-sour-sauce-picnic-summer-menu-tasty-food-top-view-flat-lay_2829-6471.jpg?w=740&t=st=1683084410~exp=1683085010~hmac=9ae276d1f6e27451ae505cd368c1c7d7dd41e79997935e1bda94a7f2fcda846b" className="w-full rounded-2xl" alt="" /></SwiperSlide>
+        <SwiperSlide><img src="https://img.freepik.com/free-photo/baked-chicken-wings-asian-style-tomatoes-sauce-plate_2829-10654.jpg?w=740&t=st=1683084612~exp=1683085212~hmac=2cc449bcca072f5db172ca1a9bbe101093a0088721b156b94a5b0d8015ed8461" className="w-full rounded-2xl" alt="" /></SwiperSlide>
        
       </Swiper>
   );

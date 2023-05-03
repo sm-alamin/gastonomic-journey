@@ -70,10 +70,10 @@ const Footer = () => {
           </div>
         </div>
         <div className="text-white font-bold py-5">
-          <span className="footer-title">Address Info</span>
+          <span className="footer-title underline">Address Info</span>
           <a className="link link-hover">
             <span className="text-orange-300">Phone: </span>
-            +880-1637131835
+            +917428730894
           </a>
           <a className="link link-hover">
             <span className="text-orange-300">Email: </span>
@@ -85,7 +85,7 @@ const Footer = () => {
           </a>
           <a className="link link-hover">
             <span className="text-orange-300">Location: </span>
-            Chasara,Balurmath,Narayanganj
+            Park Street, Kolkata, India
           </a>
         </div>
       </footer>
