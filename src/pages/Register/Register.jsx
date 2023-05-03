@@ -9,12 +9,12 @@ const Register = () => {
     event.preventDefault();
     const form = event.target;
 
-    const name = form.name.value;
+    const displayName = form.name.value;
     const email = form.email.value;
-    const photo = form.photo.value;
+    const photoURL = form.photo.value;
     const password = form.password.value;
     const confirm_password = form.confirm_password.value;
-    console.log(name, email, password, photo);
+    console.log(name, email, password, photoURL);
 
     if (password !== confirm_password) {
       setError("Your password did not match");
@@ -23,7 +23,7 @@ const Register = () => {
       setError("password must be 6 characters or longer");
       return;
     }
-    createUser(email, password)
+    createUser(email, password , displayName, photoURL)
       .then((result) => {
         const loggedUser = result.user;
         console.log(loggedUser);

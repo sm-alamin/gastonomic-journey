@@ -1,7 +1,12 @@
 import React from "react";
+import { ToastContainer, toast } from "react-toastify";
 
 const RecipeDetails = ({ recipe }) => {
   const { id, name, ingredients, method, rating,photo } = recipe;
+
+  const addToFavourite =() =>{
+    toast.success("Added as your favourite recipe");
+  }
   return (
     <div className="card  bg-base-100 shadow-xl py-10">
       <figure>
@@ -23,8 +28,9 @@ const RecipeDetails = ({ recipe }) => {
        
        <p>{rating}</p>
         <div className="card-actions justify-end">
-          <button className="btn btn-primary">Add to favourite</button>
+          <button onClick={addToFavourite} className="btn btn-primary">Add to favourite</button>
         </div>
+        <ToastContainer position="top-center"/>
       </div>
     </div>
   );

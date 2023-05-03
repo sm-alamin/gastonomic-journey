@@ -5,6 +5,7 @@ import { useLoaderData } from 'react-router-dom';
 
 const ViewDetails = () => {
     const recipes = useLoaderData();
+    
     console.log(recipes);
     return (
         <div className='w-11/12 mx-auto'>

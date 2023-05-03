@@ -145,7 +145,7 @@ const NavigationBar = () => {
           ) : (
             <Link
               to="login"
-              className="btn btn-ghost nav-link active text-white"
+              className="btn btn-ghost nav-link bg-base-300 text-black"
             >
               Login
             </Link>
