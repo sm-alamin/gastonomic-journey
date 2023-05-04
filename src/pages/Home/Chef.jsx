@@ -5,6 +5,7 @@ import {
   FaPlusCircle,
   FaTwitter,
 } from "react-icons/fa";
+import LazyLoad from "react-lazy-load";
 import { Link } from "react-router-dom";
 const Chef = ({ chef }) => {
   const {
@@ -23,11 +24,14 @@ const Chef = ({ chef }) => {
     onMouseLeave={() => setIsHovering(false)}
   >
     <div className="aspect-w-3 aspect-h-2 relative">
-      <img
+    <LazyLoad>
+    <img
         className="object-cover h-80 w-full relative hover:scale-105"
         src={picture_url}
         alt="Chef 2"
       />
+    </LazyLoad>
+    
       <span
         className="absolute top-10 right-10 bg-slate-200 font-bold border rounded-full text-3xl hover:border-red-200"
         onMouseEnter={() => setIsHovering(true)}

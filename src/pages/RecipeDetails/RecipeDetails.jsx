@@ -1,9 +1,9 @@
 import React, { useState } from "react";
-import { FaRegStar, FaStar } from "react-icons/fa";
 import { ToastContainer, toast } from "react-toastify";
-import { Rating } from '@smastrom/react-rating'
 
 import '@smastrom/react-rating/style.css'
+import LazyLoad from "react-lazy-load";
+import { Rating } from "@smastrom/react-rating";
 
 const RecipeDetails = ({ recipe }) => {
   const { id, name, ingredients, method, rating,photo } = recipe;
@@ -16,7 +16,9 @@ const RecipeDetails = ({ recipe }) => {
   return (
     <div className="card bg-base-100 shadow-xl py-10">
       <figure>
-        <img src={photo} alt="recipe" className="w-full h-96" />
+      <LazyLoad>
+      <img src={photo} alt="recipe" className="w-full h-96" />
+    </LazyLoad>
       </figure>
       <div className="card-body">
         <h2 className="card-title text-2xl text-purple-800">

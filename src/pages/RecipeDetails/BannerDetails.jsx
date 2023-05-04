@@ -1,5 +1,6 @@
 import React from "react";
 import { FaFacebookF, FaInstagram, FaLinkedinIn, FaTwitter } from "react-icons/fa";
+import LazyLoad from "react-lazy-load";
 
 const BannerDetails = ({info,id}) => {
   const {
@@ -69,7 +70,9 @@ const BannerDetails = ({info,id}) => {
       </div>
       </div>
       <div>
-        <img src={picture_url} alt="" className="rounded-xl shadow-lg"/>
+      <LazyLoad height={762}>
+      <img src={picture_url} alt="" className="rounded-xl shadow-lg"/>
+    </LazyLoad>
       </div>
     </div>
   );
