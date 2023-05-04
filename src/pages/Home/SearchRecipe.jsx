@@ -4,6 +4,7 @@ import { FaSkyatlas, FaStaylinked } from "react-icons/fa";
 const SearchRecipe = () => {
   return (
     <div className="w-full lg:w-11/12 mx-auto bg-gray-100 p-10">
+      {/* Section Intro */}
       <div className="flex justify-center items-center">
         <FaSkyatlas />
         <h2 className="text-2xl font-extrabold tracking-tight text-gray-900 mx-2">
@@ -23,12 +24,14 @@ const SearchRecipe = () => {
           <div>-------------------------</div>
         </div>
       </div>
-      <div className="form-control">
-        <div className="input-group">
+
+      {/* SearchBar */}
+      <div className="form-control pb-10">
+        <div className="input-group flex justify-center items-center">
           <input
             type="text"
             placeholder="Type your recipe name here"
-            className="input input-bordered w-full"
+            className="input input-bordered w-3/6"
           />
           <button className="btn btn-square">
             <svg

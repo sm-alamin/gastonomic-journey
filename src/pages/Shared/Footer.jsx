@@ -10,6 +10,7 @@ import {
 const Footer = () => {
   return (
     <div className="mx-auto w-full">
+      {/* Footer top */}
       <footer className="footer w-full mx-auto p-16 border-b bg-neutral text-neutral-content">
         <div className="flex justify-center items-center py-5 gap-10">
           <div className="flex flex-col">
@@ -89,7 +90,7 @@ const Footer = () => {
           </a>
         </div>
       </footer>
-
+      {/* Footer Bottom */}
       <footer className="footer px-10 py-4  bg-neutral text-neutral-content">
         <div className="items-center grid-flow-col">
           <p>&copy; Copyright by Gastonomic Journey, All Right Reserved.</p>

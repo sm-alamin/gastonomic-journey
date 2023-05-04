@@ -1,24 +1,25 @@
-import React, { useState } from "react";
+import React, { Component, useState } from "react";
 import { ToastContainer, toast } from "react-toastify";
 
-import '@smastrom/react-rating/style.css'
+import "@smastrom/react-rating/style.css";
 import LazyLoad from "react-lazy-load";
 import { Rating } from "@smastrom/react-rating";
 
 const RecipeDetails = ({ recipe }) => {
-  const { id, name, ingredients, method, rating,photo } = recipe;
+  const { id, name, ingredients, method, rating, photo } = recipe;
   const [isDisabled, setIsDisabled] = useState(false);
 
-  const addToFavourite =() =>{
-    setIsDisabled(true)
+  const addToFavourite = () => {
+    setIsDisabled(true);
     toast.success("Added as your favourite recipe");
-  }
+  };
+  // Recipe details page
   return (
     <div className="card bg-base-100 shadow-xl py-10">
       <figure>
-      <LazyLoad>
-      <img src={photo} alt="recipe" className="w-full h-96" />
-    </LazyLoad>
+        <LazyLoad>
+          <img src={photo} alt="recipe" className="w-full h-96" />
+        </LazyLoad>
       </figure>
       <div className="card-body">
         <h2 className="card-title text-2xl text-primary">
@@ -45,7 +46,11 @@ const RecipeDetails = ({ recipe }) => {
           <span className="ms-5 mt-2">{rating}</span>
         </div>
         <div className="card-actions justify-end">
-          <button onClick={addToFavourite} className="btn btn-primary" disabled={isDisabled}>
+          <button
+            onClick={addToFavourite}
+            className="btn btn-primary"
+            disabled={isDisabled}
+          >
             Add to favourite
           </button>
         </div>

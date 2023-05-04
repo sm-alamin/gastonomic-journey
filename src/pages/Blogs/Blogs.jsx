@@ -18,7 +18,7 @@ const Blogs = () => {
       windowWidth: document.documentElement.clientWidth, // Set the window width to the client's width
       windowHeight: document.documentElement.clientHeight, // Set the window height to the client's height
       scrollX: window.scrollX, // Set the scroll X position to the current window scroll position
-      scrollY: window.scrollY // Set the scroll Y position to the current window scroll position
+      scrollY: window.scrollY, // Set the scroll Y position to the current window scroll position
     }).then((canvas) => {
       const imgData = canvas.toDataURL("image/png");
 
@@ -39,10 +39,13 @@ const Blogs = () => {
 
   return (
     <div>
-     <div className="text-center">
-
-     <button className="btn active mt-5" onClick={downloadPDF}><FaDownload /></button>
-     </div>
+      <div className="text-center">
+        {/* Button to download blog */}
+        <button className="btn active mt-5" onClick={downloadPDF}>
+          <FaDownload />
+        </button>
+      </div>
+      {/* Blog Page */}
       <Blog />
     </div>
   );

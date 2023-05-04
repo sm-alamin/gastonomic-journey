@@ -6,6 +6,7 @@ const Contact = () => {
     <div className="bg-gray-100 py-8">
       <div className="container mx-auto px-4">
         <div className="w-11/12 mx-auto">
+          {/* banner */}
           <div className="flex justify-center items-center">
             <FaSkyatlas />
             <h2 className="text-2xl font-extrabold tracking-tight text-gray-900 mx-3">
@@ -25,6 +26,7 @@ const Contact = () => {
               <div>-------------------------</div>
             </div>
           </div>
+          {/* contact left side */}
           <div className="flex flex-wrap -mx-4 pt-5 mt-20">
             <div className="w-full md:w-1/2 px-4 mb-8">
               <form className="bg-white rounded-lg overflow-hidden shadow-md p-6">
@@ -81,6 +83,8 @@ const Contact = () => {
                 </button>
               </form>
             </div>
+
+            {/* contact right side */}
             <div className="w-full md:w-1/2 px-4 mb-8 relative pt-12">
               <img
                 src="https://images.pexels.com/photos/33999/pexels-photo.jpg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"

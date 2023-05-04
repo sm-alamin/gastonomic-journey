@@ -3,6 +3,7 @@ import React from "react";
 const Blog = () => {
   return (
     <div id="blog-post" className="w-11/12 mx-auto">
+      {/* First Blog */}
       <div className="card  bg-base-100 shadow-xl border px-5 mt-5 hover:bg-slate-200">
         <div className="card-body">
           <h2 className="card-title">
@@ -27,6 +28,7 @@ const Blog = () => {
         </div>
       </div>
 
+      {/* Second Blog */}
       <div className="card  bg-base-100 shadow-xl border px-5 mt-5 hover:bg-slate-200">
         <div className="card-body">
           <h2 className="card-title">
@@ -85,6 +87,7 @@ const Blog = () => {
         </div>
       </div>
 
+      {/* Third Blog */}
       <div className="card  bg-base-100 shadow-xl border px-5 mt-5 hover:bg-slate-200">
         <div className="card-body">
           <h2 className="card-title">
@@ -117,6 +120,8 @@ const Blog = () => {
           </p>
         </div>
       </div>
+
+      {/* Fourth Blog */}
       <div className="card  bg-base-100 shadow-xl border px-5 mt-5 mb-5 hover:bg-slate-200">
         <div className="card-body">
           <h2 className="card-title">

@@ -3,12 +3,12 @@ import BannerDetails from "./BannerDetails";
 import { useParams } from "react-router-dom";
 import { ClipLoader } from "react-spinners";
 
-
 const ChefBanner = () => {
   const { id } = useParams();
   const [bannerInfo, setBannerInfo] = useState([]);
   const [loading, setLoading] = useState(true);
 
+  // get data from chef info by id
   useEffect(() => {
     fetch(`https://chef-recipe-hunter-server-blush.vercel.app/chef-info/${id}`)
       .then((response) => response.json())
@@ -26,7 +26,7 @@ const ChefBanner = () => {
     <div>
       {loading ? (
         <div className="flex justify-center items-center h-48">
-          <ClipLoader   color="#36d7b7" />
+          <ClipLoader color="#36d7b7" />
         </div>
       ) : (
         bannerInfo.map((info) => <BannerDetails key={info.id} info={info} />)
