@@ -8,6 +8,7 @@ import ErrorPage from "../pages/Error/ErrorPage";
 import About from "../pages/About/About";
 import Blog from "../pages/Blogs/Blog";
 import PrivateRoute from "./PrivateRoute";
+import Blogs from "../pages/Blogs/Blogs";
 
 const router = createBrowserRouter([
   {
@@ -25,7 +26,7 @@ const router = createBrowserRouter([
       },
       {
         path: "blog",
-        element: <Blog />,
+        element: <Blogs />,
       },
       {
         path: "view-details/:id",

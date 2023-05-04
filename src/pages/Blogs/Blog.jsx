@@ -2,7 +2,7 @@ import React from "react";
 
 const Blog = () => {
   return (
-    <div className="w-11/12 mx-auto">
+    <div id="blog-post" className="w-11/12 mx-auto">
       <div className="card  bg-base-100 shadow-xl border px-5 mt-5 hover:bg-slate-200">
         <div className="card-body">
           <h2 className="card-title">
@@ -47,14 +47,14 @@ const Blog = () => {
               First, We need to install the prop-types package using npm or
               yarn:{" "}
             </a>
-            <code className="text-primary">npm install prop-types</code>
+            <code className="text-purple-500">npm install prop-types</code>
           </li>
           <li>
             <a href="">
               Then,We have to import the PropTypes object from the prop-types
               package in our component file:{" "}
             </a>
-            <code className="text-primary">
+            <code className="text-purple-500">
               import PropTypes from 'prop-types';
             </code>
           </li>
