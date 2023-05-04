@@ -113,11 +113,11 @@ const handleGithubSignIn = () => {
         </form>
         <hr className="my-6 border-gray-300 w-full" />
         <div className="grid grid-cols-2 gap-4">
-          <button className="bg-purple-400 hover:bg-purple-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">
+          <button className="flex flex-col justify-center items-center bg-purple-400 hover:bg-purple-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">
             <FaGoogle />
             <span className="ml-2" onClick={handleGoogleSignIn}>Login with Google</span>
           </button>
-          <button className="bg-gray-800 hover:bg-gray-900 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">
+          <button className="flex flex-col justify-center items-center bg-gray-800 hover:bg-gray-900 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">
             <FaGithub/>
             <span className="ml-2" onClick={handleGithubSignIn}>Login with Github</span>
           </button>

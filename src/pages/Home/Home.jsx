@@ -2,6 +2,10 @@ import React from "react";
 import BannerRight from "./BannerRight";
 import BannerLeft from "./BannerLeft";
 import Chefs from "./Chefs";
+import LatestRecipe from "./LatestRecipe";
+import PopularRecipe from "./PopularRecipe";
+import SearchRecipe from "./SearchRecipe";
+import Contact from "./Contact";
 
 const Home = () => {
   return (
@@ -12,6 +16,18 @@ const Home = () => {
     </div>
     <section>
       <Chefs/>
+    </section>
+    <section className="py-10">
+    <LatestRecipe />
+    </section>
+    <section className="py-10">
+    <PopularRecipe />
+    </section>
+    <section className="py-10">
+    <SearchRecipe />
+    </section>
+    <section className="py-10">
+    <Contact />
     </section>
     </div>
   );
