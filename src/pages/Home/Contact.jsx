@@ -86,17 +86,17 @@ const Contact = () => {
                 src="https://images.pexels.com/photos/33999/pexels-photo.jpg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
                 alt=""
               />
-              <div className="bg-white rounded-lg overflow-hidden shadow-md p-6 absolute -top-6 right-6">
+              <div className="bg-white rounded-lg overflow-hidden shadow-md p-6 lg:absolute lg:-top-6 lg:right-6">
                 <h2 className="text-lg font-bold mb-4">
                   We will wait for your response
                 </h2>
-                <div className="flex items-center mb-4">
+                <div className="flex flex-col md:flex-row items-center mb-4">
                   <div className="w-8 h-8 bg-blue-500 rounded-full flex items-center justify-center mr-3">
                     <FaEnvelope className="text-white" />
                   </div>
                   <p className="text-gray-700">gastonomic.journey@gmail.com</p>
                 </div>
-                <div className="flex items-center">
+                <div className="flex flex-col md:flex-row items-center">
                   <div className="w-8 h-8 bg-blue-500 rounded-full flex items-center justify-center mr-3">
                     <FaPhone className="text-white" />
                   </div>

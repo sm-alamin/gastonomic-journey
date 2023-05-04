@@ -78,7 +78,7 @@ const NavigationBar = () => {
             </li>
           </ul>
         </div>
-        <Link className="btn btn-ghost normal-case text-xl">
+        <Link className="btn btn-ghost normal-case text-xs sm:text-xl">
           Gasto<span className="text-purple-400 mr-2">nomic </span>Jour
           <span className="text-purple-400">ney</span>
         </Link>

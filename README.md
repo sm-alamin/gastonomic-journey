@@ -1,5 +1,5 @@
 
-# Chef-recipe-hunter-a collection of good chef and recipe
+# Gastonomic-Journey-a collection of good chef and recipe
 
 
 
@@ -13,7 +13,8 @@
 
 ## Features
 
-- Display Chef info on the homepage.
+- User can see Chef info on the homepage.
+- User can see Recipe info on the homepage.
 - Users can click on a view recipe button to view details about chef and recipe.
 - Users can see recipe details
 - Users can select the favourite recipe

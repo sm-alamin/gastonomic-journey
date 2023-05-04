@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { FaRegStar, FaStar } from "react-icons/fa";
 import { ToastContainer, toast } from "react-toastify";
 import { Rating } from '@smastrom/react-rating'
@@ -7,8 +7,10 @@ import '@smastrom/react-rating/style.css'
 
 const RecipeDetails = ({ recipe }) => {
   const { id, name, ingredients, method, rating,photo } = recipe;
+  const [isDisabled, setIsDisabled] = useState(false);
 
   const addToFavourite =() =>{
+    setIsDisabled(true)
     toast.success("Added as your favourite recipe");
   }
   return (
@@ -41,7 +43,7 @@ const RecipeDetails = ({ recipe }) => {
           <span className="ms-5 mt-2">{rating}</span>
         </div>
         <div className="card-actions justify-end">
-          <button onClick={addToFavourite} className="btn btn-primary">
+          <button onClick={addToFavourite} className="btn btn-primary" disabled={isDisabled}>
             Add to favourite
           </button>
         </div>

@@ -25,8 +25,8 @@ const LatestRecipe = () => {
               <div>-------------------------</div>
             </div>
 
-            <div className='flex gap-5 py-7'>
-                <div>
+            <div className='flex flex-col justify-center items-center lg:flex-row gap-5 py-7'>
+                <div className=''>
                     <img src="https://img.freepik.com/premium-photo/dum-handi-chicken-biryani-is-prepared-earthen-clay-pot-called-haandi-popular-indian-non-vegetarian-food_466689-52414.jpg?w=740" alt="" className='w-60 h-36 rounded-full'/>
                     <a href='#' className='text-2xl'>Chicken Biryani</a>
                    <div className='flex justify-center items-center gap-2'>

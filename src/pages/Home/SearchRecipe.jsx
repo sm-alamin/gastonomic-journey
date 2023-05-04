@@ -3,7 +3,7 @@ import { FaSkyatlas, FaStaylinked } from "react-icons/fa";
 
 const SearchRecipe = () => {
   return (
-    <div className="w-3/4 mx-auto bg-gray-100 p-10">
+    <div className="w-full lg:w-11/12 mx-auto bg-gray-100 p-10">
       <div className="flex justify-center items-center">
         <FaSkyatlas />
         <h2 className="text-2xl font-extrabold tracking-tight text-gray-900 mx-2">
