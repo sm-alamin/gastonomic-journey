@@ -25,7 +25,7 @@ const Contact = () => {
               <div>-------------------------</div>
             </div>
           </div>
-          <div className="flex flex-wrap -mx-4 pt-5">
+          <div className="flex flex-wrap -mx-4 pt-5 mt-20">
             <div className="w-full md:w-1/2 px-4 mb-8">
               <form className="bg-white rounded-lg overflow-hidden shadow-md p-6">
                 <div className="mb-4">
@@ -86,7 +86,7 @@ const Contact = () => {
                 src="https://images.pexels.com/photos/33999/pexels-photo.jpg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
                 alt=""
               />
-              <div className="bg-white rounded-lg overflow-hidden shadow-md p-6 lg:absolute lg:-top-6 lg:right-6">
+              <div className="bg-white rounded-lg overflow-hidden shadow-md p-6 lg:absolute lg:-top-10 lg:-right-10">
                 <h2 className="text-lg font-bold mb-4">
                   We will wait for your response
                 </h2>

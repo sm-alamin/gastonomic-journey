@@ -21,10 +21,10 @@ const RecipeDetails = ({ recipe }) => {
     </LazyLoad>
       </figure>
       <div className="card-body">
-        <h2 className="card-title text-2xl text-purple-800">
-          <span className="text-purple-400">Recipe Name:</span> {name}
+        <h2 className="card-title text-2xl text-primary">
+          <span className="text-primary">Recipe Name:</span> {name}
         </h2>
-        <h2 className="text-2xl text-purple-500">Ingredients:</h2>
+        <h2 className="text-2xl text-primary">Ingredients:</h2>
         <ul>
           {ingredients.map((ingredient, index) => (
             <li key={index} className="">
@@ -32,7 +32,7 @@ const RecipeDetails = ({ recipe }) => {
             </li>
           ))}
         </ul>
-        <h2 className="text-2xl text-purple-500">Method:</h2>
+        <h2 className="text-2xl text-primary">Method:</h2>
         <ol>
           {method.map((step, index) => (
             <li key={index} className="">

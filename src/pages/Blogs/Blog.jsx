@@ -47,14 +47,14 @@ const Blog = () => {
               First, We need to install the prop-types package using npm or
               yarn:{" "}
             </a>
-            <code className="text-purple-500">npm install prop-types</code>
+            <code className="text-primary">npm install prop-types</code>
           </li>
           <li>
             <a href="">
               Then,We have to import the PropTypes object from the prop-types
               package in our component file:{" "}
             </a>
-            <code className="text-purple-500">
+            <code className="text-primary">
               import PropTypes from 'prop-types';
             </code>
           </li>

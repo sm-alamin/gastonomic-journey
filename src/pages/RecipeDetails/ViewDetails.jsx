@@ -9,7 +9,7 @@ const ViewDetails = () => {
         <div className='w-11/12 mx-auto'>
             <ChefBanner />
 
-            <h3 className='text-2xl text-purple-400 font-bold text-center'>My Latest Recipes- <span className='text-purple-800'>You can try</span></h3>
+            <h3 className='text-2xl text-primary font-bold text-center'>My Latest Recipes- <span className='text-primary'>You can try</span></h3>
             <div className='grid grid-cols-2 gap-5'>
             {
                 recipes.map(recipe => <RecipeDetails 

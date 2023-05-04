@@ -30,8 +30,8 @@ const Footer = () => {
         <div className="border p-10 rounded-full text-center">
           <div>
             <p className="text-2xl font-bold">
-              Gasto<span className="text-purple-400">nomic </span>Jour
-              <span className="text-purple-400">ney</span>
+              Gasto<span className="text-primary">nomic </span>Jour
+              <span className="text-primary">ney</span>
             </p>
             <p className="font-bold">Established- 1995</p>
           </div>
@@ -72,19 +72,19 @@ const Footer = () => {
         <div className="text-white font-bold py-5">
           <span className="footer-title underline">Address Info</span>
           <a className="link link-hover">
-            <span className="text-orange-300">Phone: </span>
+            <span className="text-primary">Phone: </span>
             +917428730894
           </a>
           <a className="link link-hover">
-            <span className="text-orange-300">Email: </span>
+            <span className="text-primary">Email: </span>
             gastonomic.journey@gmail.com
           </a>
           <a className="link link-hover">
-            <span className="text-orange-300">Fax Id: </span>
+            <span className="text-primary">Fax Id: </span>
             +025789613
           </a>
           <a className="link link-hover">
-            <span className="text-orange-300">Location: </span>
+            <span className="text-primary">Location: </span>
             Park Street, Kolkata, India
           </a>
         </div>

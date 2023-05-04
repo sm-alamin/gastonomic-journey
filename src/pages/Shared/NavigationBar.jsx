@@ -79,8 +79,8 @@ const NavigationBar = () => {
           </ul>
         </div>
         <Link className="btn btn-ghost normal-case text-xs sm:text-xl">
-          Gasto<span className="text-purple-400 mr-2">nomic </span>Jour
-          <span className="text-purple-400">ney</span>
+          Gasto<span className="text-primary mr-2">nomic </span>Jour
+          <span className="text-primary">ney</span>
         </Link>
       </div>
       <div className="navbar-center hidden lg:flex">

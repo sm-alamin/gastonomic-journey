@@ -33,10 +33,10 @@ const PopularRecipe = () => {
                 <img src="https://assets.epicurious.com/photos/6423291e3a47f7515556c384/2:1/w_1004,h_502,c_limit/FennelOrangeSalad_RECIPE_032323_49640.jpg" className="w-full h-full" alt="" />
                 <div>
                     <div className="w-full h-full lg:h-96 lg:w-96  bg-white p-10 lg:absolute lg:top-14 lg:right-10 rounded-lg">
-                        <h3 className="text-purple-900 font-bold text-3xl text-center">Fennel Orange <br /> Salad</h3>
+                        <h3 className="text-primary font-bold text-3xl text-center">Fennel Orange <br /> Salad</h3>
                         <p> The salad is typically made by slicing the fennel bulb thinly and combining it with segmented oranges, chopped red onion, and a simple dressing made with olive oil, lemon juice, salt, and pepper.</p>
-                        <button className="btn outline mt-5">view recipe</button>
-                        <div className="text-white text-center p-3 font-bold bg-red-700 absolute -top-3 right-24 lg:-top-5 lg:right-32
+                        <button className="btn outline mt-5 active">view recipe</button>
+                        <div className="text-white text-center p-3 font-bold bg-primary absolute -top-3 right-24 lg:-top-5 lg:right-32
                         ">Cook this now</div>
                     </div>
                 </div>
@@ -47,7 +47,7 @@ const PopularRecipe = () => {
                 <img src="https://images.pexels.com/photos/958545/pexels-photo-958545.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" className="w-full h-full" alt="" />
                 <div>
                     <div className="w-full h-full lg:h-96 lg:w-96  bg-white p-10 lg:absolute lg:top-14 lg:right-10 rounded-lg">
-                        <h3 className="text-purple-900 font-bold text-3xl text-center">Chicken Tanduri</h3>
+                        <h3 className="text-primary font-bold text-3xl text-center">Chicken Tanduri</h3>
                         <p>Chicken Tandoori is believed to have originated in the Punjab region of India and Pakistan, where it was traditionally served at special occasions such as weddings and festivals. Today, it is enjoyed all over the world and is a popular item on Indian restaurant menus.</p>
                         <button className="btn outline mt-5">view recipe</button>
                         <div className="text-white text-center p-3 font-bold bg-red-700 absolute -top-3 right-24 lg:-top-5 lg:right-32
@@ -61,7 +61,7 @@ const PopularRecipe = () => {
                 <img src="https://images.pexels.com/photos/2233729/pexels-photo-2233729.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" className="w-full h-full" alt="" />
                 <div>
                     <div className="w-full h-full lg:h-96 lg:w-96  bg-white p-10 lg:absolute lg:top-14 lg:right-10 rounded-lg">
-                        <h3 className="text-purple-900 font-bold text-3xl text-center">Meat Kabab</h3>
+                        <h3 className="text-primary font-bold text-3xl text-center">Meat Kabab</h3>
                         <p>Meat Kabab is often served with a variety of accompaniments, such as rice, bread, salad, and chutney or yogurt dip. It can be enjoyed as a snack, appetizer, or main course, and is a popular street food in many parts of the world.</p>
                         <button className="btn outline mt-5">view recipe</button>
                         <div className="text-white text-center p-3 font-bold bg-red-700 absolute -top-3 right-24 lg:-top-5 lg:right-32
