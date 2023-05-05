@@ -6,9 +6,9 @@ import Login from "../pages/Login/Login";
 import Register from "../pages/Register/Register";
 import ErrorPage from "../pages/Error/ErrorPage";
 import About from "../pages/About/About";
-import Blog from "../pages/Blogs/Blog";
 import PrivateRoute from "./PrivateRoute";
 import Blogs from "../pages/Blogs/Blogs";
+import MyFavourite from "../pages/Favourite/MyFavourite";
 
 const router = createBrowserRouter([
   {
@@ -23,6 +23,10 @@ const router = createBrowserRouter([
       {
         path: "about",
         element: <About />,
+      },
+      {
+        path: "my-favourite",
+        element: <MyFavourite />,
       },
       {
         path: "blog",

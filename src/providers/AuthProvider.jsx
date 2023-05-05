@@ -5,6 +5,7 @@ import {
   onAuthStateChanged,
   signInWithEmailAndPassword,
   signOut,
+  updateCurrentUser,
 } from "firebase/auth";
 import app from "../firebase/firebase.config";
 import { useEffect } from "react";
@@ -22,20 +23,27 @@ const AuthProvider = ({ children }) => {
   const [user, setUser] = useState(null);
 
   // Functions for creating a new user account, signing in, and logging out
-  const createUser = (email, password, displayName, photoURL) => {
+  const createUser = (email, password) => {
     setLoading(true);
     return createUserWithEmailAndPassword(
       auth,
       email,
       password,
-      displayName,
-      photoURL
+      
     );
   };
   const signIn = (email, password) => {
     setLoading(true);
     return signInWithEmailAndPassword(auth, email, password);
   };
+  const updateInfo = (displayName, photoURL) => {
+    setLoading(true);
+    return updateCurrentUser(auth.currentUser, {
+      displayName,
+      photoURL,
+    });
+  };
+  
   const logOut = () => {
     setLoading(true);
     signOut(auth);
@@ -62,6 +70,7 @@ const AuthProvider = ({ children }) => {
     createUser,
     signIn,
     logOut,
+    updateInfo,
   };
 
   // Render the AuthContext.Provider with the authInfo object as its value

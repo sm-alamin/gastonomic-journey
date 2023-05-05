@@ -4,6 +4,7 @@ import { ToastContainer, toast } from "react-toastify";
 import "@smastrom/react-rating/style.css";
 import LazyLoad from "react-lazy-load";
 import { Rating } from "@smastrom/react-rating";
+import { addToDb, getRecipeInformation } from "../../utilities/fakedb";
 
 const RecipeDetails = ({ recipe }) => {
   const { id, name, ingredients, method, rating, photo } = recipe;
@@ -11,7 +12,15 @@ const RecipeDetails = ({ recipe }) => {
 
   const addToFavourite = () => {
     setIsDisabled(true);
-    toast.success("Added as your favourite recipe");
+    const recipeInfo = getRecipeInformation();
+    const isAlreadyExists = recipeInfo[id];
+    if (isAlreadyExists) {
+      toast.error("You have already added this recipe !");
+    } else {
+      addToDb(id);
+      toast.success("Added as your favourite recipe");
+    }
+    
   };
   // Recipe details page
   return (
@@ -47,7 +56,7 @@ const RecipeDetails = ({ recipe }) => {
         </div>
         <div className="card-actions justify-end">
           <button
-            onClick={addToFavourite}
+            onClick={()=>addToFavourite(id)}
             className="btn btn-primary"
             disabled={isDisabled}
           >

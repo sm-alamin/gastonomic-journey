@@ -5,6 +5,7 @@ import './Login.css'
 import { AuthContext } from "../../providers/AuthProvider";
 import { GithubAuthProvider, GoogleAuthProvider, getAuth, signInWithPopup } from "firebase/auth";
 import app from "../../firebase/firebase.config";
+import { ToastContainer, toast } from "react-toastify"
 
 const Login = () => {
   const [user, setUser] = useState(null);
@@ -12,7 +13,6 @@ const Login = () => {
   const googleProvider = new GoogleAuthProvider();
   const githubProvider = new GithubAuthProvider();
   const { signIn } = useContext(AuthContext);
-  const [error, setError] = useState("");
   const location = useLocation();
   const from = location.state?.from?.pathname || '/'
   const navigate = useNavigate();
@@ -33,7 +33,7 @@ const Login = () => {
             navigate(from, {replace:true})
         })
         .catch(error => {
-          setError(error.message);
+          toast.error(error.message);
         })
     
 }
@@ -70,7 +70,6 @@ const handleGithubSignIn = () => {
       <div className="bg-white p-10 rounded-lg shadow-md">
         <h2 className="text-2xl font-bold mb-5 text-center">Login</h2>
         <form onSubmit={handleLogin}>
-        <p className="text-error">{error}</p>
           <div className="mb-4">
             <label className="block text-gray-700 font-bold mb-2" htmlFor="email">
               Email
@@ -129,6 +128,7 @@ const handleGithubSignIn = () => {
           </Link>
         </p>
       </div>
+      <ToastContainer position="top-center" />
     </div>
   );
 };
