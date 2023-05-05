@@ -21,7 +21,7 @@ const BannerDetails = ({ info, id }) => {
   }
 
   return (
-    <div className="grid grid-cols-2 py-10 justify-center items-center">
+    <div className="grid grid-cols-1 lg:grid-cols-2 py-10 justify-center items-center mt-10 lg:mt-0">
       <div>
         <h2 className="text-2xl text-center text-primary font-bold">
           Hello, I’m <br />
@@ -84,8 +84,8 @@ const BannerDetails = ({ info, id }) => {
         </div>
       </div>
       <div>
-        <LazyLoad height={762}>
-          <img src={picture_url} alt="" className="rounded-xl shadow-lg" />
+        <LazyLoad>
+          <img src={picture_url} alt="" className="rounded-xl w-full shadow-lg mt-5 lg:mt-0" />
         </LazyLoad>
       </div>
     </div>

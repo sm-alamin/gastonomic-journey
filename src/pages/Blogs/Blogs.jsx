@@ -3,6 +3,7 @@ import jsPDF from "jspdf";
 import html2canvas from "html2canvas";
 import Blog from "./Blog";
 import { FaDownload } from "react-icons/fa";
+import Banner from "../Banner/Banner";
 
 const Blogs = () => {
   const downloadPDF = () => {
@@ -39,6 +40,7 @@ const Blogs = () => {
 
   return (
     <div>
+       <Banner pageName="Blog"/>
       <div className="text-center">
         {/* Button to download blog */}
         <button className="btn active mt-5" onClick={downloadPDF}>

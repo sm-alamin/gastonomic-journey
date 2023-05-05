@@ -57,7 +57,7 @@ const RecipeDetails = ({ recipe }) => {
         <div className="card-actions justify-end">
           <button
             onClick={()=>addToFavourite(id)}
-            className="btn btn-primary"
+            className="btn active"
             disabled={isDisabled}
           >
             Add to favourite

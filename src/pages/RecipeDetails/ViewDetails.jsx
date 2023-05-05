@@ -15,7 +15,7 @@ const ViewDetails = () => {
       <h3 className="text-2xl text-primary font-bold text-center">
         My Latest Recipes- <span className="text-primary">You can try</span>
       </h3>
-      <div className="grid grid-cols-2 gap-5">
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-5">
         {recipes.map((recipe) => (
           <RecipeDetails key={recipe.id} recipe={recipe} />
         ))}

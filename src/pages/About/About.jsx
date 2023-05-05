@@ -1,9 +1,12 @@
 import React from 'react';
+import Banner from '../Banner/Banner';
 
 const About = () => {
   return (
+    <>
+    {/* Banner */}
+    <Banner pageName="About Us"/>
     <div className="container mx-auto px-4 py-8">
-      <h1 className="text-3xl font-bold text-center mb-8">About Us</h1>
       <div className="flex flex-col md:flex-row md:space-x-8">
         <div className="md:w-1/2 mb-8 relative">
           <img src="https://images.unsplash.com/photo-1493770348161-369560ae357d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80" alt="About Us" className="w-full rounded-lg" />
@@ -34,6 +37,7 @@ const About = () => {
         </div>
       </div>
     </div>
+    </>
   );
 };
 

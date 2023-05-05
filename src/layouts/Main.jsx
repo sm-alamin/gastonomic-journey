@@ -8,7 +8,7 @@ const Main = () => {
   return (
     <div>
       {/* Render the header and navigation bar components */}
-      <div className="bg-black h-36 text-white">
+      <div className="bg-neutral h-36 text-white">
         <Header />
         <NavigationBar />
       </div>

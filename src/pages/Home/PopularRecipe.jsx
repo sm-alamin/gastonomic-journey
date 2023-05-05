@@ -51,7 +51,7 @@ const PopularRecipe = () => {
                   coconut oil, lime juice, sugar, and salt, it’s a winner. Plus,
                   this cucumber salad is actually served warm.
                 </p>
-                <button className="btn outline mt-5 active">view recipe</button>
+                <button className="btn outline bg-primary mt-5 active">view recipe</button>
                 <div
                   className="text-white text-center p-3 font-bold bg-primary absolute -top-3 right-24 lg:-top-5 lg:right-32
                         "
@@ -82,9 +82,9 @@ const PopularRecipe = () => {
                   Today, it is enjoyed all over the world and is a popular item
                   on Indian restaurant menus.
                 </p>
-                <button className="btn outline mt-5">view recipe</button>
+                <button className="btn outline bg-primary mt-5">view recipe</button>
                 <div
-                  className="text-white text-center p-3 font-bold bg-red-700 absolute -top-3 right-24 lg:-top-5 lg:right-32
+                  className="text-white text-center p-3 font-bold bg-primary absolute -top-3 right-24 lg:-top-5 lg:right-32
                         "
                 >
                   Cook this now
@@ -113,9 +113,9 @@ const PopularRecipe = () => {
                   be enjoyed as a snack, appetizer, or main course, and is a
                   popular street food in many parts of the world.
                 </p>
-                <button className="btn outline mt-5">view recipe</button>
+                <button className="btn outline bg-primary mt-5">view recipe</button>
                 <div
-                  className="text-white text-center p-3 font-bold bg-red-700 absolute -top-3 right-24 lg:-top-5 lg:right-32
+                  className="text-white text-center p-3 font-bold bg-primary absolute -top-3 right-24 lg:-top-5 lg:right-32
                         "
                 >
                   Cook this now
