@@ -8,11 +8,11 @@ const LatestRecipe = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
         {/* Section Intro */}
         <div className="flex justify-center items-center">
-          <FaSkyatlas />
+          <FaSkyatlas className="mr-3"/>
           <h2 className="text-2xl font-extrabold tracking-tight text-gray-900">
             Our Latest Recipe
           </h2>
-          <FaSkyatlas />
+          <FaSkyatlas className="ms-3"/>
         </div>
 
         <div className="mx-auto">

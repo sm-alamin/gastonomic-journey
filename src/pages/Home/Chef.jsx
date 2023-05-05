@@ -128,7 +128,7 @@ const Chef = ({ chef }) => {
         <div className="mt-3 flex justify-end">
           <Link
             to={`/view-details/${id}`}
-            className="text-sm font-medium btn btn-ghost outline-dotted text-slate-600 hover:text-indigo-500 hover:bg-base-200"
+            className="text-sm font-medium btn btn-ghost outline-dotted text-primary hover:text-indigo-500 hover:bg-base-200"
           >
             View Recipes
           </Link>

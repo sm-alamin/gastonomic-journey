@@ -10,11 +10,11 @@ const PopularRecipe = () => {
     <div className="w-3/4 mx-auto">
       {/* Section Intro */}
       <div className="flex justify-center items-center">
-        <FaSkyatlas />
+        <FaSkyatlas className="mr-3"/>
         <h2 className="text-2xl font-extrabold tracking-tight text-gray-900">
           Popular Recipe
         </h2>
-        <FaSkyatlas />
+        <FaSkyatlas className="ms-3"/>
       </div>
       <div className="mx-auto pb-10">
         <p className="mt-2 text-lg text-gray-600 text-center">

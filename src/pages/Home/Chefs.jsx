@@ -24,11 +24,11 @@ const Chefs = () => {
       <div className="bg-gray-100 py-8">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <div className="flex justify-center items-center">
-            <FaSkyatlas />
+            <FaSkyatlas className="mr-3"/>
             <h2 className="text-2xl font-extrabold tracking-tight text-gray-900">
               Our Chefs
             </h2>
-            <FaSkyatlas />
+            <FaSkyatlas className="ms-3"/>
           </div>
 
           <div className="mx-auto">

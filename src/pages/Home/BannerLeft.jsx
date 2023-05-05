@@ -10,7 +10,7 @@ const BannerLeft = () => {
         <span className="text-primary mr-2">nomic </span>Jour
         <span className="text-primary">ney</span>
       </h2>
-      <p className="text-2xl text-primary pt-5">
+      <p className="text-2xl text-black pt-5">
         Find Your Best <span className="text-primary">Healthy</span> &&{" "}
         <span className="text-primary">Tasty Food</span>
       </p>
